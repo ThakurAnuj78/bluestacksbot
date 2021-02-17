@@ -20,7 +20,8 @@ async def on_message(message):
     author = message.author
     if author == client.user:
         return
-
+    if str(message.content).lower() == 'hi':
+        await message.channel.send("Hey")
     contents = message.content.split(" ")
     if len(contents) > 1:
         if contents[0].startswith('!google'):
